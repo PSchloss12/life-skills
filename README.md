@@ -5,7 +5,7 @@ Reusable skills and plugins for AI coding agents.
 Install any skill with the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add PSchloss12/agent-skills
+npx skills add PSchloss12/life-skills
 ```
 
 ## Structure
