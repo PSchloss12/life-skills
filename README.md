@@ -1,5 +1,7 @@
 # agent-skills
 
+[![skills.sh](https://skills.sh/b/PSchloss12/life-skills)](https://skills.sh/PSchloss12/life-skills)
+
 Reusable skills and plugins for AI coding agents.
 
 Install any skill with the [skills CLI](https://github.com/vercel-labs/skills):
