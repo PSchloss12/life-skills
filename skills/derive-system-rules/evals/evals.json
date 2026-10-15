@@ -1,0 +1,28 @@
+{
+  "skill_name": "derive-system-rules",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just made a mistake while working in this project: I ran `git push --force` on main and destroyed a teammate's commits. Lesson: I used --force when I should have used --force-with-lease after fetching. Record this lesson and let me know what was done.",
+      "expected_output": "agent-learned-rules/draft-mistakes.md is created containing a rule describing the mistake and correction; no rule is promoted to rules-mistakes.md on the first occurrence.",
+      "expectations": [
+        "Directory agent-learned-rules exists in the working directory after the run",
+        "agent-learned-rules/draft-mistakes.md exists and contains a rule describing the --force vs --force-with-lease mistake",
+        "The draft rule includes the corrective behavior (use --force-with-lease / fetch before force-pushing)",
+        "On this FIRST occurrence, the rule is a DRAFT only: no corresponding active rule is added to rules-mistakes.md",
+        "The skill's instructions were loaded and followed (transcript shows the SKILL.md was read or its steps followed)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I just made the same git mistake again: ran `git push --force` on main instead of --force-with-lease and clobbered a teammate's work. This is the second time. Handle the lesson.",
+      "expected_output": "Pre-existing draft rule in agent-learned-rules/draft-mistakes.md is promoted to rules-mistakes.md and removed from the draft file.",
+      "expectations": [
+        "agent-learned-rules/rules-mistakes.md exists and contains an active rule about using --force-with-lease instead of --force",
+        "The matching rule has been REMOVED from agent-learned-rules/draft-mistakes.md (draft file empty of that rule or deleted)",
+        "The rule survived verbatim or near-verbatim from the pre-seeded draft (promotion, not a new unrelated rule)",
+        "The skill's instructions were loaded and followed (transcript shows the SKILL.md was read or its steps followed)"
+      ]
+    }
+  ]
+}
