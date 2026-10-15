@@ -1,0 +1,45 @@
+{
+  "skill_name": "formal-logic-reasoning",
+  "evals": [
+    {
+      "id": 1,
+      "name": "data-center-water-claim",
+      "prompt": "A colleague keeps repeating this in our sustainability meetings: 'data centers have no long term affect on water ecosystems when built near oceans or lakes.' Before our next meeting I want to know if that argument actually holds up. Can you break it down formally - lay out the premises and assumptions behind the claim, and show whether the conclusion follows and whether the whole thing is sound? I need to be able to defend whatever you tell me, so be rigorous.",
+      "expected_output": "Formal decomposition of the claim into premises/assumptions, an assessment separating inference validity from empirical premise truth, and a verdict that does not endorse the claim (real-world water-impact mechanisms identified).",
+      "files": [],
+      "expectations": [
+        "Decomposes the claim into explicit premises and/or hidden assumptions before evaluating it",
+        "Distinguishes the validity of the inference from the truth of the empirical premise - i.e. recognizes that even a valid-looking argument stands or falls on whether the zero-impact premise is actually true",
+        "Does not endorse the conclusion: identifies it as unsupported or likely false, citing real-world water-impact mechanisms (e.g. thermal discharge, cooling-water withdrawal/intake, chemical or brine discharge)",
+        "Expresses the verdict with calibrated uncertainty (a likelihood percentage, or equivalent hedged framing) rather than asserting it as certain",
+        "SKILL FORMAT: output uses the skill's contract - PREMISES / ASSUMPTIONS & AXIOMS / CONCLUSION / NOTES sections with a percentage on every assertive statement and form-check in NOTES"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "dashboard-syllogism",
+      "prompt": "quick sanity check before I say something in our incident channel: someone claimed 'if the build is broken, the pipeline dashboard shows red. the dashboard is showing red right now, so the build must be broken.' i'm about to page the on-call engineer based on this. is that reasoning airtight or not? show your work so i can defend it",
+      "expected_output": "Identifies affirming-the-consequent (or otherwise shows non-sequitur), demonstrates why with a counterexample or contrasting valid form, and calibrates the practical on-call decision.",
+      "files": [],
+      "expectations": [
+        "Identifies the argument form as affirming the consequent (or otherwise explicitly shows the conclusion does not follow from the premises)",
+        "Demonstrates the invalidity with a counterexample or by contrasting a valid form (e.g. modus tollens) rather than merely asserting it",
+        "Gives calibrated practical guidance for the on-call decision - acknowledges alternative causes of a red dashboard rather than treating the inference as decisive",
+        "SKILL FORMAT: output uses the skill's contract - PREMISES / ASSUMPTIONS & AXIOMS / CONCLUSION / NOTES sections with a percentage on every assertive statement and form-check in NOTES"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "sharks-fish-middle-term",
+      "prompt": "My logic textbook lists 'All fish are swimmers. All sharks are swimmers. Therefore, all sharks are fish.' as a classic bad argument, but I don't get it - sharks ARE fish, so what's wrong? Walk me through formally what the flaw is and why the conclusion being true doesn't save the argument.",
+      "expected_output": "Distinguishes conclusion truth from argument validity, names the undistributed middle (or proves invalidity), and gives a same-form substitution counterexample with a false conclusion.",
+      "files": [],
+      "expectations": [
+        "Distinguishes the truth of the conclusion from the validity of the argument form",
+        "Names the undistributed middle fallacy (or otherwise formally proves the form invalid, e.g. truth-table/countermodel)",
+        "Constructs a same-form substitution counterexample whose conclusion is false (proving the form invalid regardless of shark taxonomy)",
+        "SKILL FORMAT: output uses the skill's contract - PREMISES / ASSUMPTIONS & AXIOMS / CONCLUSION / NOTES sections with a percentage on every assertive statement and form-check in NOTES"
+      ]
+    }
+  ]
+}
